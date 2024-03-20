@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Detection Result</title>
+    <style>
+        /* Center the content on the page */
+        body {
+            text-align: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Define the styles for the two boxes */
+        .result-box, .description-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 50%;
+            display: inline-block;
+            text-align: left; /* Align text in the boxes to the left */
+            background-color: #fff;
+        }
+
+        .result-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10%;
+            width: 75%;
+            border: 1px solid #333;
+            padding: 20px;
+        }
+        .description {
+            text-align: center;
+            font-weight: normal;
+            color: #777;
+            font-size: 16px;
+        }
+
+        .description-box {
+            margin-left: 3%;
+            width: 80%;
+            text-align: center;
+            border: 2px solid #333;
+            padding: 10px; /* Add padding for better spacing */
+        }
+
+        .result-box h1, .description-box h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .result-box img {
+            max-width: 100%;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        footer {
+            
+        }
+        /* Adjust other styles as needed */
+    </style>
+</head>
+<body>
+    <h1>Disease Detection Result</h1>
+    <div class="result-box">        
+        <img src="{{ image_url }}" alt="Uploaded Image" width="200">
+        <h2><u>Predicted Disease:</u></h2>
+        <h2 style="color:red">{{ result }}</h2>
+        <p class="description" style="font-size:18px"><strong>Description:</strong> {{ disease_description['Description'] }}</p>
+        <div class="description-box">        
+            <h2><u>Additional Disease Information:</u></h2>
+            <p style="font-size:18px"><strong>Symptoms:<br></strong> {{ disease_description['Symptoms'] }}</p>
+            <p style="font-size:18px"><strong>Causes:<br></strong> {{ disease_description['Causes'] }}</p>
+            <p style="font-size:18px"><strong>Treatments:<br></strong> {{ disease_description['Treatments'] }}</p>
+        </div>
+    </div>
+
+    
+    <footer>
+        <a href="/">Upload Another Image</a>
+    </footer>
+</body>
+</html>
